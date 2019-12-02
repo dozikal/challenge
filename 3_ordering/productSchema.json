@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "#/productSchema",
+    "type": "object",
+    "title": "Product",
+    "description": "A product in the catalog",
+    "required": [
+        "id",
+        "name",
+        "cost",
+        "options"
+    ],
+    "properties": {
+        "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "The unique identifier of the product",
+            "examples": [
+                1
+            ]
+        },
+        "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The Name of the product",
+            "examples": [
+                "Coffee"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "A brief description of the product",
+            "examples": [
+                "Our special house blend - light bodied, clear flavours, round and satisfying."
+            ],
+            "pattern": "^(.*)$"
+        },
+        "cost": {
+            "type": "number",
+            "title": "Cost",
+            "description": "The base cost of the product",
+            "examples": [
+                4.00
+            ]
+        }
+    },
+    "$ref": "#/optionSchema"
+}

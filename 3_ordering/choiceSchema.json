@@ -1,0 +1,47 @@
+{
+    "choices": {
+        "$id": "#/choiceSchema",
+        "type": "array",
+        "title": "Choices",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+            "type": "object",
+            "title": "The choices for an option",
+            "required": [
+                "id",
+                "name",
+                "cost"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "title": "Id",
+                    "description": "The unique identifier of the choices",
+                    "examples": [
+                        1
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "title": "Choice Name",
+                    "description": "The name of a choice",
+                    "examples": [
+                        "Reguar",
+                        "Large"
+                    ],
+                    "pattern": "^(.*)$"
+                },
+                "cost": {
+                    "type": "number",
+                    "title": "Cost",
+                    "description": "Additional cost that this choice adds",
+                    "examples": [
+                        0.00,
+                        0.66
+                    ]
+                }
+            }
+        }
+    }
+}

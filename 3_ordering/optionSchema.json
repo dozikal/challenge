@@ -1,0 +1,73 @@
+{
+    "options": {
+        "$id": "#/optionSchema",
+        "type": "array",
+        "title": "Options",
+        "description": "The options for a product",
+        "minItems": 0,
+        "uniqueItems": true,
+        "items": {
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+                "id",
+                "name",
+                "choices",
+                "minSelection",
+                "maxSelection"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "title": "Id",
+                    "description": "The unique identifier of the option",
+                    "examples": [
+                        1
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "title": "The name of the option",
+                    "examples": [
+                        "Coffee Size"
+                    ],
+                    "pattern": "^(.*)$"
+                },
+                "minSelection": {
+                    "type": "integer",
+                    "title": "Minimum possible selection",
+                    "examples": [
+                        1
+                    ]
+                },
+                "maxSelection": {
+                    "type": "integer",
+                    "title": "Maximum possible selection",
+                    "examples": [
+                        3
+                    ]
+                },
+                "selectedIndex": {
+                    "type": "array",
+                    "minItems": 0,
+                    "uniqueItems": true,
+                    "title": "Selected Items",
+                    "description": "You can set this to pre-select items as a default",
+                    "items": {
+                        "type": "integer",
+                        "examples": [
+                            0
+                        ]
+                    },
+                    "example": [
+                        [
+                            0,
+                            1
+                        ]
+                    ]
+                },
+                "$ref": "#/choiceSchema"
+            }
+        }
+    }
+}
